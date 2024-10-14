@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 from supabase import create_client
 
 url = "https://yurkilcutxjmzhbiojkf.supabase.co"
@@ -7,10 +8,18 @@ key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1
 screen = Tk()
 screen.geometry("800x500")
 
+#funções
 def name_save(event=None):
     name = name_entry.get()
-    name_entry.destroy()
-    name_button.destroy()
+
+    if name == "Digite seu nome..." or name == "":
+        messagebox.showwarning("Nome Inválido", "Por favor, digite um nome válido.")
+
+    else:
+        name_entry.destroy()
+        name_button.destroy()
+
+        name_label = Label(screen, text=name).grid(row=0, column=0)
 
 class Name_PlaceHolder():
     def view(event=None):
@@ -32,11 +41,8 @@ name_button = Button(screen, text="salvar nome", bg="green", command=name_save)
 name_button.grid(row=0, column=1)
 
 #aba de entrada de mensagem
-msg_entry = Entry(screen, width=40)
-msg_entry.grid(row=1, column=0)
-
-print(name_entry.get())
-
+#msg_entry = Entry(screen, width=40)
+#msg_entry.grid(row=1, column=0)
 
 
 mainloop()
