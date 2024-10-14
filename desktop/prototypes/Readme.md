@@ -1,8 +1,24 @@
-Prototype 01:
+# Prototype 01:
 nesse prototipo eu testei como funciona o banco de dados da supabase e como usa-lo da forma mais simples possivel, nesse prototipo, por ser o primeiro eu não me preocupei como nada a não ser se vai se comunicar com a DB, e funcionou, ainda é bem ruim, bugs conseguem ser perceptiveis rapidamente e não demora muito para ficar sobrecarregado, precisa de melhoras em basicamente tudo, mas pelo menos ele cumpre oque eu quis fazer nele(testar a comunicação com a DB).
 
-Prototype 02:
-nesse prototipo eu queria implementar uma representação visual no sistema, começando pela caixa de texto para o usuario digitar seu nome, a parte mais dificil foi criar o placeholder ja que eu tive que entender como que funcionava os eventos do metodo bind e tive que criar a Name_PlaceHolder para não sujar o codigo, ela foi feita de forma não usual mais para organização, mas no prototipe 3 farei uma forma melhor de incrementar o placeholder ao widget Entry.
-Logo apos criar o placeholder, eu fui melhorar o funcionamento de botao de salvar o nome, primeiro fiz uma verificação se o nome é valido, e se fosse, a caixa de texto e o botao some para aparecer apenas o nome do usuario, essa parte foi complicada ja que eu tentei criar um aviso de "nome invalido" porem não foi muito bem sucedido por algum erros que eu não entendi e procurei por outras alternativas e achei o menssagebox, foi meio gambiarra e não deu o efeitoq ue eu esperava, porem procurarei consertar isso em prototipos futuros.
+Futuras mudanças:
+- interface grafica
+- melhor a conecção com o banco de dados(mais rapida e eficiente)
+- melhorar a forma com que pega a hora atual
+- melhorar como as mensagens são exibidas 
+- mostrar as mensagens em tempo real
 
-Então com a aba de nome criada, era hora de crair a aba de enviar mensagens
+# Prototype 02:
+nesse prototipo eu queria implementar uma representação visual no sistema, grande parte do codigo é cheio de gambiarras mas foi um ponta-pé inicial para a criação de uma interface para o sistema.
+
+Futuras mudanças:
+- procurar alguma forma de mostrar uma mensagem de "nome invalido" sem ser com o messagebox
+- fazer de uma forma mais eficiente os placeholders ja que copiar e colar codigo é vergonhoso
+- achar uma forma de substituir os metodos de posicionamento de widgets(grid, pack e o place) ja que eles não atendem as espectativas de uso 
+- melhorar o visual 
+- entender melhor conceitos do tkinter para evitar conflitos e melhorar a experiencia
+- melhor conecção com o banco de dados(mais rapida e eficiente)
+- separar as funções do codigo principal, ja que deixa o codigo bem mais complexo
+- mostrar a hora de envio de mensagens novamente
+- melhorar o sistema de envio de mensagem
+- melhorar como as mensagens são mostradas
