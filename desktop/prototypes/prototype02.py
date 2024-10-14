@@ -8,7 +8,9 @@ screen = Tk()
 screen.geometry("800x500")
 
 def name_save(event=None):
-    pass
+    name = name_entry.get()
+    name_entry.destroy()
+    name_button.destroy()
 
 class Name_PlaceHolder():
     def view(event=None):
@@ -19,20 +21,19 @@ class Name_PlaceHolder():
         if name_entry.get() == "Digite seu nome...":
             name_entry.delete(0, "end")
 
+#   aba de entrada de nome
 name_entry = Entry(screen, width=40)
 name_entry.grid(row=0, column=0)
 name_entry.insert(0, "Digite seu nome...")
 name_entry.bind("<FocusOut>", Name_PlaceHolder.view, add="+")
 name_entry.bind("<FocusIn>", Name_PlaceHolder.clear, add="+")
 
-
-msg_entry = Entry(screen, width=40)
-msg_entry.grid(row=1, column=0)
-
-
 name_button = Button(screen, text="salvar nome", bg="green", command=name_save)
 name_button.grid(row=0, column=1)
 
+#aba de entrada de mensagem
+msg_entry = Entry(screen, width=40)
+msg_entry.grid(row=1, column=0)
 
 print(name_entry.get())
 
