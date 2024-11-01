@@ -28,6 +28,6 @@ Futuras mudanças:
 obs: melhorar o sistema de atualização(me arrependo de minhas escolhas)
 
 # Prototype 03:
-Nesse prototipo eu decidi separar as funções e classes do codigo principal tambem decidi testar e melhorar algumas coisas como os metodos de geometria por exemplo.
+Nesse prototipo eu decidi separar as funções e classes do codigo principal e tambem decidi testar e melhorar algumas coisas como os metodos de geometria ou a aparencia da interface por exemplo.
 
 Futuras mudanças:
