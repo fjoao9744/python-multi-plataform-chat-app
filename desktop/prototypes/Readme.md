@@ -14,7 +14,7 @@ Nesse prototipo eu queria implementar uma representação visual no sistema, gra
 Futuras mudanças:
 - procurar alguma forma de mostrar uma mensagem de "nome invalido" sem ser com o messagebox
 - fazer de uma forma mais eficiente os placeholders ja que copiar e colar codigo é vergonhoso
-- achar uma forma de substituir os metodos de posicionamento de widgets(grid, pack e o place) ja que eles não atendem as espectativas de uso 
+- achar uma forma de substituir os metodos de posicionamento de widgets(grid, pack e o place) ja que eles não atendem as espectativas de uso
 - melhorar o visual 
 - entender melhor conceitos do tkinter para evitar conflitos e melhorar a experiencia
 - melhor conecção com o banco de dados(mais rapida e eficiente) ⚠
@@ -28,6 +28,11 @@ Futuras mudanças:
 obs: melhorar o sistema de atualização(me arrependo de minhas escolhas)
 
 # Prototype 03:
-Nesse prototipo eu decidi separar as funções e classes do codigo principal e tambem decidi testar e melhorar algumas coisas como os metodos de geometria ou a aparencia da interface por exemplo.
+Nesse prototipo eu decidi testar e melhorar algumas coisas como os metodos de geometria ou a aparencia da interface por exemplo.
 
 Futuras mudanças:
+- salvar o nome(e não criar uma variavel temporaria)
+- achar uma forma de substituir os metodos de posicionamento de widgets(grid, pack e o place) ja que eles não atendem as espectativas de uso 
+- separar as funções do codigo principal, ja que deixa o codigo bem mais complexo ⚠
+
+
