@@ -34,5 +34,7 @@ Futuras mudanças:
 - salvar o nome(e não criar uma variavel temporaria)
 - achar uma forma de substituir os metodos de posicionamento de widgets(grid, pack e o place) ja que eles não atendem as espectativas de uso 
 - separar as funções do codigo principal, ja que deixa o codigo bem mais complexo ⚠
-
+- buscar um jeito mais simples de estabalecer a conecção com o server(talvez criando um arquivo que faça isso e o programa principal só tenha que ler o arquivo)
+- criar classes para melhorar os widgets
+- optimizar a exibição de mensagens(não carregar todas de uma só vez)
 
