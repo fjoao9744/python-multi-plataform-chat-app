@@ -29,6 +29,7 @@ obs: melhorar o sistema de atualização(me arrependo de minhas escolhas)
 
 # Prototype 03:
 Nesse prototipo eu decidi testar e melhorar algumas coisas como os metodos de geometria ou a aparencia da interface por exemplo.
+Tambem decidi deixar o chat em tempo real.
 
 Futuras mudanças:
 - salvar o nome(e não criar uma variavel temporaria)

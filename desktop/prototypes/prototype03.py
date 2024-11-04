@@ -72,29 +72,35 @@ supabase: Client = create_client(url, key)
 # Vai carregar todas as mensagens
 messages = supabase.table('Mensagens').select("*").execute()
 
-    
 # Widgets principais
-messages_list = Listbox(screen, bg="#2D2B41", relief=SOLID, bd=2, fg='#C2CDE9', font=("Courier", 12), width=32, height=15)
+messages_list = Listbox(screen, bg="#2D2B41", relief=SOLID, bd=2, fg='#C2CDE9', font=("Courier", 12), width=32, height=15, selectmode=EXTENDED)
 messages_list.pack()
 
 # Exibindo as mensagens
 from threading import Thread # Importando bibliotecas pra atualizar a lista de mensagens
-from time import sleep
 
-last_message = "smog"
-def messages_view(event=None):
-    for _ in messages.data:
-        messages_list.insert(0, f"{_['nome']} - {_['msg']}")
-        last_message = _
+for _ in messages.data:
+    messages_list.insert(END, f"{_['nome']} - {_['msg']}")
+    last_message_id = _["id"]
 
-def is_new_message():
-    if last_message != 
+def is_new_message(event=None):
+    global last_message_id
 
-messages_update = Thread(target=messages_view) # Faz com que atualiza de segundo em segundo
+    new_messages = supabase.table('Mensagens').select("*").gt("id", last_message_id).execute() # Carrega sempre a ultima mensagem
+
+    if new_messages: # Se houver uma ultima mensagem então ele vai mostrar
+        for _ in new_messages.data: 
+            messages_list.insert(END, f"{_['nome']} - {_['msg']}")
+            last_message_id = _["id"]
+            messages_list.see(END)
+
+    screen.after(1000, is_new_message) # Vai rodar a função a cada 1000 milisegundos
+
+messages_update = Thread(target=is_new_message, daemon=True) # Faz com que atualiza de segundo em segundo
 messages_update.start()
 
 # Manipulando a rolagem
-messages_list.see(END) 
+messages_list.see(END)
 
 
 
