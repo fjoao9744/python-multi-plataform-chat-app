@@ -104,5 +104,19 @@ messages_list.see(END)
 
 
 
+'''     Aba de envio de mensagens    '''
+
+# Widgets principais
+message_send_frame = Frame(screen, bg="#2B2B33")
+
+message_send_button = Button(message_send_frame, text="enviar", bg="#2D2B41", relief=SOLID, fg='#C2CDE9', font=("Courier", 12))
+message_send_entry = Entry(message_send_frame, bg="#39366B", relief=SOLID, bd=2, fg='#C2CDE9', font=("Courier", 12))
+
+# Metodos geometricos
+message_send_frame.pack(pady=5)
+
+message_send_entry.pack(side=LEFT, ipady=4, padx=10)
+message_send_button.pack(side=LEFT)
+
 
 mainloop()
