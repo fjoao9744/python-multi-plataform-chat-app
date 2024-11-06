@@ -106,12 +106,23 @@ messages_list.see(END)
 
 '''     Aba de envio de mensagens    '''
 
+def send_message(event=None):
+    if name_entry["state"] == DISABLED:
+        message_msg = message_send_entry.get()
+        message_name = name_entry.get()
+
+
+        message_add = supabase.table('Mensagens').insert({"nome": message_name, "msg": message_msg}).execute()
+        messages_list.see(END)
+        message_send_entry.delete(0, END)
+
+
 # Widgets principais
 message_send_frame = Frame(screen, bg="#2B2B33")
 
-message_send_button = Button(message_send_frame, text="enviar", bg="#2D2B41", relief=SOLID, fg='#C2CDE9', font=("Courier", 12))
+message_send_button = Button(message_send_frame, text="enviar", bg="#2D2B41", relief=SOLID, fg='#C2CDE9', font=("Courier", 12), command=send_message)
 message_send_entry = Entry(message_send_frame, bg="#39366B", relief=SOLID, bd=2, fg='#C2CDE9', font=("Courier", 12))
-
+message_send_entry.bind("<Return>", send_message)
 # Metodos geometricos
 message_send_frame.pack(pady=5)
 
