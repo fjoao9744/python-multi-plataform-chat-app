@@ -28,9 +28,15 @@ def name_save(event=None): # Salva o nome na entrada
         name_save_button["state"] = DISABLED
         name_edit_button["state"] = NORMAL
         name_entry.config(state='disabled')
+        
+        message_send_entry["state"] = NORMAL
+        message_send_button["state"] = NORMAL
+
 
     
 def name_edit(event=None): # Reaciona a entrada e o botão de salvar
+        message_send_entry["state"] = DISABLED
+        message_send_button["state"] = DISABLED
         name_save_button["state"] = NORMAL
         name_edit_button["state"] = DISABLED
         name_entry.config(state='normal')
@@ -116,12 +122,14 @@ def send_message(event=None):
         messages_list.see(END)
         message_send_entry.delete(0, END)
 
+        is_new_message()
+
 
 # Widgets principais
 message_send_frame = Frame(screen, bg="#2B2B33")
 
-message_send_button = Button(message_send_frame, text="enviar", bg="#2D2B41", relief=SOLID, fg='#C2CDE9', font=("Courier", 12), command=send_message)
-message_send_entry = Entry(message_send_frame, bg="#39366B", relief=SOLID, bd=2, fg='#C2CDE9', font=("Courier", 12))
+message_send_button = Button(message_send_frame, text="enviar", bg="#2D2B41", relief=SOLID, fg='#C2CDE9', font=("Courier", 12), command=send_message, state=DISABLED)
+message_send_entry = Entry(message_send_frame, bg="#39366B", relief=SOLID, bd=2, fg='#C2CDE9', font=("Courier", 12), state=DISABLED)
 message_send_entry.bind("<Return>", send_message)
 # Metodos geometricos
 message_send_frame.pack(pady=5)

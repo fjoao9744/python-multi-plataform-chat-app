@@ -38,4 +38,8 @@ Futuras mudanças:
 - buscar um jeito mais simples de estabalecer a conecção com o server(talvez criando um arquivo que faça isso e o programa principal só tenha que ler o arquivo)
 - criar classes para melhorar os widgets
 - optimizar a exibição de mensagens(não carregar todas de uma só vez)
-
+- voltar(e melhorar) os placeholders
+- mostrar a hora que a mensagem foi enviada ⚠
+- o usuario que digitou a mensagem ficará a direita
+- adicionar um filtro no envio de mensagens(evitar spam)
+- quebrar a linha quando ultrapassar o limite da caixa
