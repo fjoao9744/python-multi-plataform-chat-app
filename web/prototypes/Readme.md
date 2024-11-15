@@ -17,3 +17,12 @@ Futuras mudanças:
 - adicionar a função de envio de mensagens
 - programar para ter uma limitação de mensagens na div(caso contrario, quando carregar todas as mensagens as mensagens vão sobrescrever as outras tags) 
 
+# Prototype 03:
+Nesse prototipo eu decidi fazer pequenas alterações no css e no back-end para resolver o problema de não estar carregando todas as mensagens.
+Alem disso eu começei a codar a função de salvar o nome.
+
+Futuras mudanças:
+- adicionar responsividade.
+- melhorar o visual
+- adicionar a função de salvar o nome e editar
+- adicionar a função de envio de mensagens

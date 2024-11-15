@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+
+    <!--    Aba de inserção do nome    -->
+    <div class="save-name">
+
+        <input type="text", placeholder="Digite seu nome aqui">
+        <button>save</button>
+        <button>edit</button>
+
+    </div>
+
+    <!--    aba de visualização de mensagens    -->
+
+    <main class="messages">
+
+        {% for _ in messages %}
+            <p>{{ _["nome"] }} - {{ _["msg"] }}</p>
+        {% endfor %}
+        
+    </main>
+
+    <!--    aba de envio de mensagens    -->
+
+    <div class="send-message">
+
+        <input type="text", placeholder="Digite sua mensgem aqui...">
+        <button id="button-send">enviar</button>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+body {
+    background-color: #2B2B33;
+    font-family: Courier;
+}
+/* Configurações gerais */
+main {
+    border: 5px solid #000000;
+    background-color: #2D2B41;
+    color: #C2CDE9;
+    border-radius: 5px;
+    
+}
+input {
+    padding: 0;
+    width: 400px;
+    height: 50px;
+    font-family: Courier;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    background-color: #39366B;
+    color: #C2CDE9;
+    font-size: 25px;
+}
+
+button {
+    font-size: 25px;
+    width: 100px;
+    height: 55px;
+    font-family: Courier;
+    border: 3px solid #000000;
+    background-color: #39366B;
+    color: #C2CDE9;
+    border-radius: 5px;
+}
+
+/*  Aba de inserção do nome  */
+.save-name {
+    display: flex;              
+    justify-content: center;   
+    align-items: center;
+    margin-bottom: 30px;
+    
+}
+
+.save-name button, .save-name input {
+    margin-right: 10px;
+    padding: 0%;
+}
+
+.save-name input {
+    padding-left: 5px;
+    width: 310px;
+}
+
+.save-name button {
+    transition: background-color 0.3s ease;
+
+}
+.save-name button:hover {
+    transition: background-color 0.3s ease;
+    background-color: #1f1e38;
+
+}
+/*  aba de visualização de mensagens  */
+.messages {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0;
+    width: 700px;
+    height: 530px;
+    margin: auto;
+    font-size: 20px;
+    position: relative;
+    overflow-y: auto;
+}
+.messages p {
+    margin: 5px;
+    margin-top: 0%;
+    margin-left: 10px;
+    padding: 0%;
+}
+.messages::-webkit-scrollbar { /* scrollbar */
+    border: 2px solid #000000;
+}
+.messages::-webkit-scrollbar-thumb {
+    transition: background-color 0.3s ease;
+    border: 2px solid #000000;
+}
+.messages::-webkit-scrollbar-thumb:hover {
+    transition: background-color 2s ease;
+    background-color: #262447;
+}
+
+/*  aba de envio de mensagens  */
+.send-message {
+    margin-top: 30px;
+    display: flex;              
+    justify-content: center;   
+    align-items: center;
+
+}
+.send-message button, .send-message input{
+    margin-right: 10px;
+    padding: 0%;
+}
+
+.send-message button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 120px;
+}
+.send-message button:hover {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation-duration: 5s;
+    background-color: #1f1e38;
+
+}
+
+.send-message input {
+    padding-left: 5px;
+    width: 560px;
+}
+
