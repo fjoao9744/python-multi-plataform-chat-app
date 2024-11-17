@@ -15,18 +15,28 @@
             <input type="text" name="name" id="name" 
             {% if IS_NAME %}
                 placeholder="{{ NOME }}" 
+                style="background-color: #2C2B41;"
+
                 disabled
             {% else %}
                 placeholder="Digite seu nome aqui" 
                 required
             {% endif %}
             >
-            <button type="submit" name="action" value="save"
+            <button type="submit" name="action" value="save" id="save"
             {% if IS_NAME %}
+                style="cursor: default;background-color: #2C2B41;"
                 disabled
             {% endif %}
             >save</button>
-            <button type="submit" name="action" value="edit">edit</button>
+            <button type="submit" name="action" value="edit" id="edit" 
+            {% if not IS_NAME %} 
+                style="cursor: default;background-color: #2C2B41;"
+                disabled
+
+            {% endif %}
+
+            >edit</button>
         </form>
     </div>
 

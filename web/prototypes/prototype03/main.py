@@ -15,7 +15,7 @@ def homepage():
             is_name = True
 
         if action == "edit":
-            pass
+            is_name = False
 
     return render_template("main.html", messages = messages.data, NOME = name, IS_NAME=is_name)
 
