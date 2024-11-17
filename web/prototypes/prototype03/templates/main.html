@@ -11,11 +11,23 @@
 
     <!--    Aba de inserção do nome    -->
     <div class="save-name">
-
-        <input type="text", placeholder="Digite seu nome aqui">
-        <button>save</button>
-        <button>edit</button>
-
+        <form method="POST" action="/">
+            <input type="text" name="name" id="name" 
+            {% if IS_NAME %}
+                placeholder="{{ NOME }}" 
+                disabled
+            {% else %}
+                placeholder="Digite seu nome aqui" 
+                required
+            {% endif %}
+            >
+            <button type="submit" name="action" value="save"
+            {% if IS_NAME %}
+                disabled
+            {% endif %}
+            >save</button>
+            <button type="submit" name="action" value="edit">edit</button>
+        </form>
     </div>
 
     <!--    aba de visualização de mensagens    -->
