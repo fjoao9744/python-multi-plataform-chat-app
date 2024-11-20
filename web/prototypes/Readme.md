@@ -24,5 +24,7 @@ Alem disso eu começei a codar a função de salvar o nome.
 Futuras mudanças:
 - adicionar responsividade.
 - melhorar o visual
-- adicionar a função de salvar o nome e editar
 - adicionar a função de envio de mensagens
+- deixar em tempo real
+
+obs: esta salvando o nome, porem não esta enviando-o para o banco de dados, espero resolver isso nos proximos prototipos

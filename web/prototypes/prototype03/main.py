@@ -9,6 +9,7 @@ app = Flask(__name__)
 def homepage():
     is_name = False
     name = ""
+    
     if request.method == "POST":
         action = request.form.get("action")
 
@@ -18,6 +19,11 @@ def homepage():
 
         if action == "edit":
             is_name = False
+
+        if action == "send":
+            message = request.form.get("message")
+
+            send_message(name, message)
 
     return render_template("main.html", messages = messages.data, NOME = name, IS_NAME=is_name)
 

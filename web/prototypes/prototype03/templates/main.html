@@ -23,12 +23,14 @@
                 required
             {% endif %}
             >
+
             <button type="submit" name="action" value="save" id="save"
             {% if IS_NAME %}
                 style="cursor: default;background-color: #2C2B41;"
                 disabled
             {% endif %}
             >save</button>
+
             <button type="submit" name="action" value="edit" id="edit" 
             {% if not IS_NAME %} 
                 style="cursor: default;background-color: #2C2B41;"
@@ -53,10 +55,10 @@
     <!--    aba de envio de mensagens    -->
 
     <div class="send-message">
-
-        <input type="text", placeholder="Digite sua mensgem aqui...">
-        <button id="button-send">enviar</button>
-
+        <form method="POST" action="/">
+            <input type="text" placeholder="Digite sua mensgem aqui..." name="message" id="message">
+            <button id="button-send" value="send" name="action">enviar</button>
+        </form>
     </div>
 
 </body>

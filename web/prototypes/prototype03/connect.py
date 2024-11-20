@@ -15,3 +15,4 @@ def send_message(name, message):
         return {"mes": localtime().tm_mon, "dia": localtime().tm_mday, "hora": localtime().tm_hour, "minuto": localtime().tm_min}
 
     message = {"data" : hora_atual(), "nome" : name, "msg" : message}
+    supabase.table('Mensagens').insert(message).execute()
