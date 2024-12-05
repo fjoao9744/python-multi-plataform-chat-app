@@ -44,3 +44,4 @@ Futuras mudanças:
 - adicionar um filtro no envio de mensagens(evitar spam)
 - quebrar a linha quando ultrapassar o limite da caixa
 - adicionar os placeholder novamente nas caixas de entrada
+
