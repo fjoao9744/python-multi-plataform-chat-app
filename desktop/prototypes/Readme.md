@@ -45,3 +45,5 @@ Futuras mudanças:
 - quebrar a linha quando ultrapassar o limite da caixa
 - adicionar os placeholder novamente nas caixas de entrada
 
+# Prototype 04:
+Nesse prototipo eu decidi testar como vai funcionar ter multiplas paginas para melhorar a experiencia do usuario e multiplos arquivos para facilitar a compreenção do codigo.
