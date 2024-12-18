@@ -61,27 +61,58 @@ class RememberMe:
 
         self.conn.commit()
         
+        cursor.execute("""
+        INSERT INTO user (nome, login, senha)
+        VALUES (?, ?, ?)
+        """, ("", "", ""))
+        
+        self.conn.commit()
+        
     def new_user(self, user):
         cursor = self.conn.cursor()
 
         cursor.execute("""
-        INSERT OR REPLACE INTO user 
+        REPLACE INTO user 
         (id, nome, login, senha)
         VALUES (?, ?, ?, ?)
-        """, (user["id"], user["nome"], user["login"], user["senha"],))
+        """, (1, user["nome"], user["login"], user["senha"],))
 
         self.conn.commit()
 
     def show_name(self):
         cursor = self.conn.cursor()
 
+        cursor.execute("""
+        SELECT nome FROM user ORDER BY id LIMIT 1
+        """)
+
+        return cursor.fetchone()
+
+    def data(self):
         cursor = self.conn.cursor()
 
         cursor.execute("""
-        SELECT nome FROM user
+        SELECT nome, login, senha FROM user ORDER BY id LIMIT 1
         """)
+        
+        result = cursor.fetchone()
+        
+        if result == ('', '', ''):
+            return False
 
-        return cursor.fetchall()
+        return result
+        
+    
+    def is_user(self):
+        cursor = self.conn.cursor()
+        
+        cursor.execute("""
+        SELECT name 
+        FROM sqlite_master 
+        WHERE type='table';
+                       """)
+            
+        return cursor.fetchone()
     
 
         

@@ -44,6 +44,11 @@ class Entry_:
 
     def get(self):
         return self.__entry.get()
+    
+    def text(self, text):
+        self.__entry.delete(0, "end")
+        self.__entry.insert(0, text)
+        self.__entry.config(fg = "black")
 
             
 
