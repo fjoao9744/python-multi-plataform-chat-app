@@ -59,10 +59,8 @@ name_entry.pack(padx=(10, 0), pady=5, anchor=N, side=LEFT, ipady=3)
 name_save_button.pack(padx=(10, 5), pady=4, anchor=N, side=LEFT)
 name_edit_button.pack(padx=5, pady=4, anchor=N, side=LEFT)
 
-
 warning_frame.pack()
 len_warning.pack()
-
 
 
 '''     Aba de visualização de mensagens    '''

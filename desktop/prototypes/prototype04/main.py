@@ -1,9 +1,12 @@
 from tkinter import *
-from tkinter import messagebox
 from methods import *
 from connection import *
+from tkinter import messagebox
+
 
 import asyncio
+
+user_name = ""
 
 def chat_screen(event=None):
     
@@ -12,6 +15,9 @@ def chat_screen(event=None):
     screen.state("zoomed")
     screen.title("Chat online")
 
+    name_user_label = Label(screen, text=user_name)
+    name_user_label.place(x=0, y=0)
+
     mainloop()
 
 def login_screen(event=None):
@@ -19,26 +25,77 @@ def login_screen(event=None):
     screen.geometry("300x400")
     screen.title("Login")
 
+
     def login(event=None):
-        login = Login(user = {"name": name_entry.get(), "login": login_entry.get(), "password": senha_entry.get()})
-        if login.execute():
+        if senha_entry.get() == "Digite sua senha" or login_entry.get() == "Digite seu login":
+            messagebox.showinfo("Digite um login", "digite um login e uma senha para poder prossegir")
+            return
+
+        if senha_entry.get() == "" or login_entry.get() == "":
+            messagebox.showinfo("Digite um login", "digite um login e uma senha para poder prossegir")
+            return
+
+        usuario = {
+            "name": name_entry.get(), 
+            "login": login_entry.get(), 
+            "password": senha_entry.get()
+            }
+
+        login = Login(user = usuario)
+        login_user = login.execute()
+        print(login_user)
+        
+        if login_user == False:
+            messagebox.showinfo("login incorreto", "Por favor, digite um login e uma senha valida")
+
+        elif login_user["login"] == usuario["login"] and login_user["senha"] == usuario["password"]:
+            
+            remember = RememberMe(login_user)
+
             entrar_button.config(state= NORMAL)
+            global user_name
+            user_name = login_user["nome"]
+            remember.new_user(user= login_user)
+
         else:
-            messagebox.showinfo("login incorreto", "O login esta incorreto") # mudar isso mais tarde
+            messagebox.showinfo("login incorreto", "Por favor, digite um login e uma senha valida")
+
+    def register(event=None):
+        if senha_entry.get() == "Digite sua senha" or login_entry.get() == "Digite seu login":
+            messagebox.showinfo("Digite um login", "digite um login e uma senha para poder prossegir")
+            return
+
+        if senha_entry.get() == "" or login_entry.get() == "":
+            messagebox.showinfo("Digite um login", "digite um login e uma senha para poder prossegir")
+            return
+
+        register = Register(user = {"name": name_entry.get(), "login": login_entry.get(), "password": senha_entry.get()})
+
+        add_user = register.execute()
+
+        if add_user == False:
+            messagebox.showinfo("Usuario existe", "O usuario ja existe")
 
 
     name_entry = Entry_(screen, "Digite seu nome")
-    name_entry.pack(pady=30)
+    name_entry.pack(pady=(30, 0))
+    name_label = Label(screen, text="O nome deve conter no minimo 5 caracteres", font=("Arial", 8))
+    name_label.pack()
 
     login_entry = Entry_(screen, "Digite seu login")
+    login_entry.pack(pady=(30, 0))
+    login_label = Label(screen, text="O login deve ser unico", font=("Arial", 8))
+    login_label.pack()
 
     senha_entry = Entry_(screen, "Digite sua senha")
     senha_entry.pack(pady=30)
 
-    entrar_button = Button(screen, text="entrar", command= lambda: (screen.state("withdrawn"), chat_screen()), state=DISABLED) # Alterar o nome mais tarde
+
+    entrar_button = Button(screen, text="entrar", command= lambda: (screen.state("withdrawn"), chat_screen(), login), state=DISABLED) # Alterar o nome mais tarde
     entrar_button.pack()
 
-    register_button = Button(screen)
+
+    register_button = Button(screen, text="Registrar", command=register)
     register_button.pack()
 
     login_button = Button(screen, text="Login", command=login)
@@ -46,6 +103,5 @@ def login_screen(event=None):
 
 
     mainloop()
-
 
 login_screen()
