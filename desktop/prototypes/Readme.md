@@ -47,3 +47,7 @@ Futuras mudanças:
 
 # Prototype 04:
 Nesse prototipo eu decidi testar como vai funcionar ter multiplas paginas para melhorar a experiencia do usuario e multiplos arquivos para facilitar a compreenção do codigo.
+
+Futuras mudanças:
+- melhorar a estrutura do codigo
+- começar a utilização do ttk
