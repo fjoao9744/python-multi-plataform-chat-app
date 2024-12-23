@@ -1,6 +1,6 @@
 ''' Importações '''
 from tkinter import *
-
+from connection import Connection
 
 ''' Caixa de Entrada '''
 class Entry_:
@@ -50,7 +50,14 @@ class Entry_:
         self.__entry.insert(0, text)
         self.__entry.config(fg = "black")
 
-            
+def add_messages(list_box):
+    connect = Connection()
+    
+    for message in connect.show_all_messages():
+        list_box.insert(END, message)
+    
+    
+                    
 
             
 

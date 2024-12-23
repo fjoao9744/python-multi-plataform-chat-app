@@ -15,6 +15,25 @@ def chat_screen(event=None):
 
     name_user_label = Label(screen, text=remember.show_name(), font=("Arial", 20))
     name_user_label.place(x=0, y=0)
+    
+    messagelist = Listbox(screen, width=250, height=40)
+    
+    add_messages(messagelist)
+    
+    messagelist.pack(pady=50)
+    
+    message_entry = Entry_(screen, placeholder="Digite sua mensagem aqui")
+    message_entry.pack()
+    def message_get():
+        message = {"nome": name_user_label['text'],"mensagem": message_entry.get()}
+        
+        return message
+    
+    connect = Connection()
+    message = message_get()
+    
+    message_send_button = Button(screen, text="Enviar mensagem", command=connect.send_message(message))
+    message_send_button.pack()
 
     mainloop()
 
@@ -22,7 +41,6 @@ def login_screen(event=None):
     screen = Tk()
     screen.geometry("300x400")
     screen.title("Login")
-
 
     def login(event=None):
         if senha_entry.get() == "Digite sua senha" or login_entry.get() == "Digite seu login":
@@ -109,4 +127,4 @@ def login_screen(event=None):
 
     mainloop()
 
-login_screen()
+chat_screen()

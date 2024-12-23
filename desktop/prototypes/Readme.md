@@ -51,3 +51,5 @@ Nesse prototipo eu decidi testar como vai funcionar ter multiplas paginas para m
 Futuras mudanças:
 - melhorar a estrutura do codigo
 - começar a utilização do ttk
+- adicionar uma ORM melhor
+- adicionar todas as funcionalidades do prototype03 
