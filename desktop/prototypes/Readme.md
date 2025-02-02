@@ -56,3 +56,6 @@ Futuras mudanças:
 
 # Prototype 04.1
 Por problema no desenvolvimento do Prototype 04 eu vi necessidade de criar uma nova versão do mesmo refazendo ele para conseguir entregar oque foi proposto no prototype 04.
+
+Futuras mudanças:
+- adicionar programação assincrona para evitar travamentos

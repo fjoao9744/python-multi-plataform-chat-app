@@ -16,9 +16,6 @@ class Connection:
     def send_message(self, message):
         self.supabase.table('Mensagens').insert({"nome": message['nome'], "mensagem": message['mensagem']}).execute()
         
-        
-        
-
 
 class Login(Connection):
     

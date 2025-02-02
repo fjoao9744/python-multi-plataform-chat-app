@@ -11,7 +11,7 @@ class Main(tk.Tk):
         
         Sinput = Send.Input(self)
         Sbutton = Send.Button(self)
-    
+        Sbutton.input_define(Sinput)
 
 main = Main()
 main.mainloop()
