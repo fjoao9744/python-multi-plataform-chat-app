@@ -59,3 +59,4 @@ Por problema no desenvolvimento do Prototype 04 eu vi necessidade de criar uma n
 
 Futuras mudanças:
 - adicionar programação assincrona para evitar travamentos
+- voltar com o tempo real

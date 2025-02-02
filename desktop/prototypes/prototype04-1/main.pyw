@@ -13,5 +13,18 @@ class Main(tk.Tk):
         Sbutton = Send.Button(self)
         Sbutton.input_define(Sinput)
 
-main = Main()
-main.mainloop()
+class Login(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        
+        self.geometry("300x300")
+        self.login_button = tk.Button(self, text="logar", command=self.login).pack()   
+    
+    def login(self):
+        self.state("withdraw")
+        main = Main()
+        main.mainloop()
+        
+if __name__ == "__main__":
+    login = Login()
+    login.mainloop()
